@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Catálogo Digital - DigitalCor</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#b8c4ff",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "background": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-secondary-container": "#00714d",
+                        "on-secondary-fixed": "#002113",
+                        "outline-variant": "#c4c5d5",
+                        "outline": "#757684",
+                        "surface-container": "#e5eeff",
+                        "on-primary-fixed": "#001453",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#802a00",
+                        "on-primary-fixed-variant": "#173bab",
+                        "tertiary-container": "#872d00",
+                        "surface": "#f8f9ff",
+                        "primary-container": "#1e40af",
+                        "error": "#ba1a1a",
+                        "tertiary": "#611e00",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "tertiary-fixed": "#ffdbce",
+                        "secondary-fixed-dim": "#4edea3",
+                        "error-container": "#ffdad6",
+                        "primary": "#00288e",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#3755c3",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "surface-container-high": "#dce9ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "on-secondary-fixed-variant": "#005236",
+                        "secondary": "#006c49",
+                        "on-tertiary-fixed": "#380d00",
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary-container": "#ffa583",
+                        "surface-variant": "#d3e4fe",
+                        "on-surface-variant": "#444653",
+                        "surface-container-low": "#eff4ff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#dde1ff",
+                        "on-primary-container": "#a8b8ff",
+                        "inverse-surface": "#213145"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "xl": "40px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-xl": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col md:flex-row antialiased">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-full py-lg px-md gap-base bg-surface-container-low border-r border-outline-variant fixed left-0 top-0 w-[260px] z-50">
+<!-- Header -->
+<div class="flex items-center gap-sm px-sm pb-lg mb-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">domain</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary">DigitalCor</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Gestión Empresarial</p>
+</div>
+</div>
+<!-- CTA -->
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md rounded-lg py-3 px-4 mb-lg hover:bg-surface-tint transition-colors duration-200 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">add</span>
+            Nueva Venta
+        </button>
+<!-- Navigation Links -->
+<div class="flex-1 flex flex-col gap-base">
+<a class="flex items-center gap-md px-sm py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Panel Control</span>
+</a>
+<a class="flex items-center gap-md px-sm py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">point_of_sale</span>
+<span class="font-label-md text-label-md">Ventas</span>
+</a>
+<!-- Active Tab: Inventario -->
+<a class="flex items-center gap-md px-sm py-3 rounded-lg bg-primary-container text-on-primary-container border-l-4 border-primary font-bold transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-label-md text-label-md">Inventario</span>
+</a>
+<a class="flex items-center gap-md px-sm py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-md text-label-md">Facturas</span>
+</a>
+<a class="flex items-center gap-md px-sm py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">Clientes</span>
+</a>
+</div>
+<!-- Footer Links -->
+<div class="mt-auto flex flex-col gap-base pt-lg border-t border-outline-variant">
+<a class="flex items-center gap-md px-sm py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md text-label-md">Ayuda</span>
+</a>
+<a class="flex items-center gap-md px-sm py-3 rounded-lg text-error hover:bg-error-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Cerrar Sesión</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col min-w-0 md:ml-[260px] pb-[80px] md:pb-0">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-40 flex justify-between items-center w-full px-lg py-sm bg-surface border-b border-outline-variant shadow-sm transition-all duration-200">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined md:hidden text-primary">menu</span>
+<h2 class="font-headline-md text-headline-md font-bold text-primary md:hidden">DigitalCor</h2>
+<!-- Search Bar (Desktop) -->
+<div class="hidden md:flex relative w-64 lg:w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors placeholder:text-outline-variant" placeholder="Buscar productos..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-all duration-200 active:scale-95">
+<img alt="Perfil de usuario" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-hcp7kd6zSfw-UmcSUj0iM7GY0ZmpD97EE891CVGf9XtSdd_1q15zRGRIrQmTsAvsH7kv2j8Uplv99QXjyp7MN-_BcNGCCTUoFWU7WMKyrWNJ-OcF4qy05z-aBXMqkvm7jyTh06io4X4yZ9bgzJU2N79wIaZQRxHFRqF4jbeTtoWqdL-HCUznSz3KB9hsnZCvjy1nfJROLrdkA2e9CX3GjQdozP6JafwOlfWNsWrV0GpZEdA3NGCCEiiGx7VAy-mR6wv-hmwyuUc"/>
+</button>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 p-md lg:p-xl space-y-lg max-w-container-max mx-auto w-full">
+<!-- Page Header & Actions -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile sm:text-headline-lg text-on-surface">Catálogo Digital</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Gestiona tu inventario y disponibilidad de productos.</p>
+</div>
+<button class="w-full sm:w-auto bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg hover:bg-surface-tint shadow-sm hover:shadow transition-all duration-200 active:scale-95 flex items-center justify-center gap-2 min-h-[44px]">
+<span class="material-symbols-outlined">add_circle</span>
+                    Añadir Producto
+                </button>
+</div>
+<!-- Mobile Search (Visible only on small screens) -->
+<div class="md:hidden relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors placeholder:text-outline-variant" placeholder="Buscar en catálogo..." type="text"/>
+</div>
+<!-- Category Filters -->
+<div class="flex items-center gap-sm overflow-x-auto pb-2 scrollbar-hide">
+<button class="px-4 py-2 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md whitespace-nowrap transition-colors">
+                    Todos
+                </button>
+<button class="px-4 py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-colors">
+                    Alimentos
+                </button>
+<button class="px-4 py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-colors">
+                    Artesanías
+                </button>
+<button class="px-4 py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-colors">
+                    Ropa
+                </button>
+<button class="px-4 py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                    Más filtros
+                </button>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-lg">
+<!-- Product Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0_4px_6px_rgba(30,64,175,0.05)] overflow-hidden flex flex-col group hover:shadow-md transition-shadow duration-200">
+<div class="relative h-48 bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A high-quality, professional product photograph of traditional Colombian coffee beans packaged in a sleek, modern craft paper bag. The setting is a brightly lit, clean white studio background consistent with a corporate modern light-mode aesthetic. Soft, diffused lighting emphasizes the texture of the packaging, projecting trust and growth for a local microenterprise. The color palette relies on neutral whites and warm earthy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLE44Ey9d0Cf7pCBxv0wq-Mq7VcoULRINJ2SCBjg_i7eA9-miolh-brLEpDL0HfRgKbJodZGCD6gMrY_JEJue6e91AGI6L8hrqSoxAP1MJ4LFHLe2TLe0kgq0kzC7lxwTKUTLtg9T-TwpdA5Nq1-jOr7kBVabs8TwMmxHqd1kzxlCza-OJoycaXRibN5TSNQ-0HtDVBMvF5CSJthm3PKdGWZJKIN3kW-_VYSN1xNa5yEevEZ1U2Ou6NJf9hHMC-bwDM4-bUTPjBW8"/>
+<div class="absolute top-2 right-2 flex gap-1 bg-surface/90 backdrop-blur-sm rounded-lg p-1 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+<button class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors" title="Editar">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:bg-error-container hover:text-error transition-colors" title="Eliminar">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<div class="p-md flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<span class="font-body-sm text-body-sm text-outline">Alimentos</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-[12px]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                45 Disp.
+                            </span>
+</div>
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface font-semibold mb-2">Café Especial Tostado</h3>
+<div class="mt-auto pt-sm flex justify-between items-center border-t border-outline-variant/50">
+<span class="font-headline-md text-headline-md text-primary font-bold">$28.000</span>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0_4px_6px_rgba(30,64,175,0.05)] overflow-hidden flex flex-col group hover:shadow-md transition-shadow duration-200">
+<div class="relative h-48 bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A crisp, detailed product shot of a hand-woven traditional Colombian artisan bag (mochila), presented on a pristine white surface. The lighting is high-key and evenly distributed to eliminate harsh shadows, fitting a clean digital catalog interface. The aesthetic is corporate yet authentic, highlighting the intricate colorful weaving patterns. The overall composition is minimalist, focusing entirely on the craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNYB0rygVXtMKxSTd0ry_-THKxX6Z7ip7hJpFycQ2NjKSSWGnS_EHCSU2LOvEXB6GYQ2HZbBKoxja_NOdhcKLySquOLNXPEpbq_iv4EOHu9KLCBnphdCgljYYwBwC7aLaEzKuXR5dx8goSEjHsMlbzVCOhvnDQ9KETEfAdk2Smha1vT7osHdP1mo2dajnXS42GMk86zeww7YF5dTFFjv0Lf_9CDYibHg2RZdJgfoXFNjd9BLx7Y91d9Zt7z4aonPSeP-QRPYRPL7M"/>
+<div class="absolute top-2 right-2 flex gap-1 bg-surface/90 backdrop-blur-sm rounded-lg p-1 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+<button class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors" title="Editar">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:bg-error-container hover:text-error transition-colors" title="Eliminar">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<div class="p-md flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<span class="font-body-sm text-body-sm text-outline">Artesanías</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-md text-[12px]">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                                2 Disp.
+                            </span>
+</div>
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface font-semibold mb-2">Mochila Wayuu Original</h3>
+<div class="mt-auto pt-sm flex justify-between items-center border-t border-outline-variant/50">
+<span class="font-headline-md text-headline-md text-primary font-bold">$120.000</span>
+</div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0_4px_6px_rgba(30,64,175,0.05)] overflow-hidden flex flex-col group hover:shadow-md transition-shadow duration-200">
+<div class="relative h-48 bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A clean, modern product photograph showing a neatly folded, high-quality white cotton t-shirt with subtle branding. It sits on a solid, light-mode background to blend seamlessly into a digital interface. The lighting is bright and professional, highlighting the fabric's texture without overwhelming the viewer. The image conveys stability, quality, and straightforward functionality suitable for an online inventory of a growing local business." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChvLX3h5MBdMhwDv8_nS3h_ya-hvHKR48QIsrTSPkmY98IofhmU92jTbyzXZj6jbSgkZ-f7KNeQ9UQjgGu_OqgyL5Flugul3FCUljKCVPwW0Gd1ypT_N5ipupmCLbBJAAbV-9R0NwZwWRQN8jA1gPZtRGfasw_-Cby0tHmIHcwsajBwyJL6IKIlk2vWRFR2kDqYDUO1ojuzLg4Au1t_52wfuLiUYW_aaHk9e2N_6VMwnSwsrtUtNkC-lZkihWyzx9laUuhayj0YYI"/>
+<div class="absolute top-2 right-2 flex gap-1 bg-surface/90 backdrop-blur-sm rounded-lg p-1 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+<button class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors" title="Editar">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:bg-error-container hover:text-error transition-colors" title="Eliminar">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<div class="p-md flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<span class="font-body-sm text-body-sm text-outline">Ropa</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-[12px]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                120 Disp.
+                            </span>
+</div>
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface font-semibold mb-2">Camiseta Básica Algodón</h3>
+<div class="mt-auto pt-sm flex justify-between items-center border-t border-outline-variant/50">
+<span class="font-headline-md text-headline-md text-primary font-bold">$35.000</span>
+</div>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0_4px_6px_rgba(30,64,175,0.05)] overflow-hidden flex flex-col group hover:shadow-md transition-shadow duration-200">
+<div class="relative h-48 bg-surface-container-low overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-outline text-[48px]">image_not_supported</span>
+<div class="absolute top-2 right-2 flex gap-1 bg-surface/90 backdrop-blur-sm rounded-lg p-1 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+<button class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors" title="Editar">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:bg-error-container hover:text-error transition-colors" title="Eliminar">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<div class="p-md flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<span class="font-body-sm text-body-sm text-outline">Alimentos</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-variant text-on-surface-variant font-label-md text-[12px]">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+                                0 Disp.
+                            </span>
+</div>
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface font-semibold mb-2">Miel Pura de Abejas 500g</h3>
+<div class="mt-auto pt-sm flex justify-between items-center border-t border-outline-variant/50">
+<span class="font-headline-md text-headline-md text-primary font-bold">$18.500</span>
+</div>
+</div>
+</article>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex md:hidden justify-around items-center px-4 pb-4 pt-2 bg-surface shadow-lg border-t border-outline-variant rounded-t-xl transition-transform duration-150">
+<a class="flex flex-col items-center justify-center text-on-surface-variant transition-transform duration-150 active:scale-90 px-4 py-1" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md mt-1">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant transition-transform duration-150 active:scale-90 px-4 py-1" href="#">
+<span class="material-symbols-outlined">sell</span>
+<span class="font-label-md text-label-md mt-1">Ventas</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant transition-transform duration-150 active:scale-90 px-4 py-1" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-md text-label-md mt-1">Facturas</span>
+</a>
+<!-- Active Tab Intent for Mobile -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 transition-transform duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
+<span class="font-label-md text-label-md mt-1">Más</span>
+</a>
+</nav>
+</body></html>

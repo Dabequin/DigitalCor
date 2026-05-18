@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DigitalCor - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Hanken+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#b8c4ff",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "background": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-secondary-container": "#00714d",
+                        "on-secondary-fixed": "#002113",
+                        "outline-variant": "#c4c5d5",
+                        "outline": "#757684",
+                        "surface-container": "#e5eeff",
+                        "on-primary-fixed": "#001453",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#802a00",
+                        "on-primary-fixed-variant": "#173bab",
+                        "tertiary-container": "#872d00",
+                        "surface": "#f8f9ff",
+                        "primary-container": "#1e40af",
+                        "error": "#ba1a1a",
+                        "tertiary": "#611e00",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "tertiary-fixed": "#ffdbce",
+                        "secondary-fixed-dim": "#4edea3",
+                        "error-container": "#ffdad6",
+                        "primary": "#00288e",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#3755c3",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "surface-container-high": "#dce9ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "on-secondary-fixed-variant": "#005236",
+                        "secondary": "#006c49",
+                        "on-tertiary-fixed": "#380d00",
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary-container": "#ffa583",
+                        "surface-variant": "#d3e4fe",
+                        "on-surface-variant": "#444653",
+                        "surface-container-low": "#eff4ff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#dde1ff",
+                        "on-primary-container": "#a8b8ff",
+                        "inverse-surface": "#213145"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "xl": "40px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-xl": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex">
+<!-- TopAppBar (Mobile Only) -->
+<header class="md:hidden sticky top-0 z-40 flex justify-between items-center w-full px-lg py-sm bg-surface border-b border-outline-variant shadow-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">menu</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">DigitalCor</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container rounded-full p-2 transition-all duration-200">notifications</span>
+<img alt="Perfil de usuario" class="w-8 h-8 rounded-full border border-outline-variant" data-alt="A professional headshot of a small business owner in a well-lit, modern office setting. The individual is smiling warmly, wearing smart casual attire. The lighting is bright and even, casting soft shadows, fitting a high-quality corporate directory or professional profile picture. The background is a slightly blurred, modern office interior with subtle neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3dGe_t6fw7m1A2xvEm_GrY8V22xA-eOsMtUkpmTZ9CMwN3zuQzmIoIr-B0yJJ3JZfzRbJdAcOT_7uHhsB-Kv-uq6-Vlz6GgGCuTVztP43eon7-ITiHsePjymac2u19xTVnOxL742PrenS32mMo6r5ToKHjfT7Dxut19Il4EysoW38qPdxdoP1GQ4BmMYLcL-t9UKgHkhX6loEb3vIcmNXLA5bMaNKfcSRisuPd7bgEQYDOVGQYNG_SI6XEgFsY3lmeJFbzx4E3sY"/>
+</div>
+</header>
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-full py-lg px-md gap-base fixed left-0 top-0 w-[260px] bg-surface-container-low border-r border-outline-variant z-50">
+<!-- Header -->
+<div class="flex items-center gap-md px-md mb-lg">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">storefront</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary">DigitalCor</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Gestión Empresarial</p>
+</div>
+</div>
+<!-- CTA -->
+<button class="w-full bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary font-label-md text-label-md py-3 rounded-lg flex items-center justify-center gap-sm mb-lg transition-colors duration-200 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add</span>
+            Nueva Venta
+        </button>
+<!-- Navigation Links -->
+<div class="flex-1 flex flex-col gap-sm">
+<!-- Active Tab -->
+<a class="flex items-center gap-md px-md py-3 rounded-r-lg bg-primary-container text-on-primary-container border-l-4 border-primary font-label-md text-label-md font-bold transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+                Panel Control
+            </a>
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-md px-md py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[24px]">point_of_sale</span>
+                Ventas
+            </a>
+<a class="flex items-center gap-md px-md py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[24px]">inventory_2</span>
+                Inventario
+            </a>
+<a class="flex items-center gap-md px-md py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[24px]">receipt_long</span>
+                Facturas
+            </a>
+<a class="flex items-center gap-md px-md py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[24px]">group</span>
+                Clientes
+            </a>
+</div>
+<!-- Footer Links -->
+<div class="flex flex-col gap-sm pt-md border-t border-outline-variant">
+<a class="flex items-center gap-md px-md py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[24px]">help</span>
+                Ayuda
+            </a>
+<a class="flex items-center gap-md px-md py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[24px]">logout</span>
+                Cerrar Sesión
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full md:ml-[260px] pb-[80px] md:pb-xl">
+<div class="max-w-[container-max] mx-auto p-md md:p-xl flex flex-col gap-xl">
+<!-- Welcome Header & Quick Actions -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-end gap-lg">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-xs">¡Hola, Comercializadora Andina!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Aquí tienes el resumen de tu negocio de hoy.</p>
+</div>
+<div class="flex flex-wrap gap-md w-full md:w-auto">
+<button class="flex-1 md:flex-none bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-md text-label-md py-3 px-lg rounded-lg flex items-center justify-center gap-sm transition-colors duration-200 shadow-sm min-h-[44px]">
+<span class="material-symbols-outlined text-[20px]">add_box</span>
+                        Añadir Producto
+                    </button>
+<button class="flex-1 md:flex-none bg-surface-container-lowest border border-outline hover:bg-surface-container text-on-surface font-label-md text-label-md py-3 px-lg rounded-lg flex items-center justify-center gap-sm transition-colors duration-200 min-h-[44px]">
+<span class="material-symbols-outlined text-[20px]">post_add</span>
+                        Crear Factura
+                    </button>
+</div>
+</section>
+<!-- Stats Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+<!-- Ingresos Mensuales (Featured / Asymmetric) -->
+<div class="lg:col-span-2 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-[0_4px_6px_rgba(30,64,175,0.05)] flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container rounded-full blur-3xl opacity-20 -mr-20 -mt-20 pointer-events-none"></div>
+<div class="flex justify-between items-start mb-lg relative z-10">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="flex items-center gap-xs text-secondary font-label-md text-label-md bg-secondary-container px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+                            +12.5%
+                        </span>
+</div>
+<div class="relative z-10">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-xs">Ingresos Mensuales</p>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">$14,500.00 <span class="text-body-md text-on-surface-variant font-normal">COP</span></h3>
+</div>
+</div>
+<!-- Ventas -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-[0_4px_6px_rgba(30,64,175,0.05)] flex flex-col justify-between">
+<div class="flex justify-between items-start mb-lg">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+<span class="flex items-center gap-xs text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+                            8%
+                        </span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-xs">Ventas (Hoy)</p>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">42</h3>
+</div>
+</div>
+<!-- Clientes Activos -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-[0_4px_6px_rgba(30,64,175,0.05)] flex flex-col justify-between">
+<div class="flex justify-between items-start mb-lg">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">group</span>
+</div>
+<span class="flex items-center gap-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">horizontal_rule</span>
+                            0%
+                        </span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-xs">Clientes Activos</p>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">1,204</h3>
+</div>
+</div>
+</section>
+<!-- Recent Activity -->
+<section class="flex flex-col gap-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Actividad Reciente</h3>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-[0_4px_6px_rgba(30,64,175,0.05)] overflow-hidden">
+<div class="flex flex-col divide-y divide-surface-container-high">
+<!-- Activity Item 1 -->
+<div class="p-md flex items-center justify-between hover:bg-surface transition-colors duration-150">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]">sell</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-semibold">Venta #1042 registrada</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cliente: Juan Pérez</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md text-on-surface">$120.000</p>
+<p class="font-body-sm text-body-sm text-outline">Hace 10 min</p>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="p-md flex items-center justify-between hover:bg-surface transition-colors duration-150">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[20px]">inventory</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-semibold">Inventario actualizado</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Se añadieron 50 unidades de "Producto A"</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-body-sm text-body-sm text-outline">Hace 2 horas</p>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="p-md flex items-center justify-between hover:bg-surface transition-colors duration-150">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-semibold">Nuevo cliente registrado</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">María González</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-body-sm text-body-sm text-outline">Ayer</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex md:hidden justify-around items-center px-4 pb-4 pt-2 bg-surface rounded-t-xl border-t border-outline-variant shadow-[0_-4px_6px_rgba(30,64,175,0.05)]">
+<!-- Active Tab -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 transition-transform duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md mt-1">Inicio</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high rounded-full px-4 py-1 transition-transform duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-[24px]">sell</span>
+<span class="font-label-md text-label-md mt-1">Ventas</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high rounded-full px-4 py-1 transition-transform duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-[24px]">description</span>
+<span class="font-label-md text-label-md mt-1">Facturas</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high rounded-full px-4 py-1 transition-transform duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+<span class="font-label-md text-label-md mt-1">Más</span>
+</a>
+</nav>
+</body></html>
