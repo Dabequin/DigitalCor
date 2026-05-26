@@ -29,6 +29,24 @@ export interface Activity {
   time: string;
 }
 
+export interface Client {
+  id: string;
+  name: string;
+  initials: string;
+  email: string;
+  phone: string;
+  city: string;
+  totalOrders: number;
+}
+
+export interface Invoice {
+  id: string;
+  client: string;
+  date: string;
+  amount: number;
+  status: 'Pagada' | 'Vencida' | 'Pendiente';
+}
+
 export interface AppState {
   products: Product[];
   orders: Order[];

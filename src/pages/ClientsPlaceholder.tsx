@@ -1,22 +1,5 @@
 import React from 'react';
-
-interface Client {
-  id: string;
-  name: string;
-  initials: string;
-  email: string;
-  phone: string;
-  city: string;
-  totalOrders: number;
-}
-
-const mockClients: Client[] = [
-  { id: 'CLI-001', name: 'Carlos Mendoza', initials: 'CM', email: 'carlos.mendoza@email.co', phone: '300 456 7890', city: 'Montería', totalOrders: 12 },
-  { id: 'CLI-002', name: 'Laura Restrepo', initials: 'LR', email: 'laura.restrepo@email.co', phone: '315 789 1234', city: 'Cereté', totalOrders: 8 },
-  { id: 'CLI-003', name: 'Distribuidora Pacífico', initials: 'DP', email: 'contacto@pacificodist.co', phone: '310 987 6543', city: 'Lorica', totalOrders: 24 },
-  { id: 'CLI-004', name: 'Andrés Gómez', initials: 'AG', email: 'andres.gomez@email.co', phone: '320 654 9870', city: 'Sahagún', totalOrders: 4 },
-  { id: 'CLI-005', name: 'Tienda El Sol', initials: 'TS', email: 'tiendaelsol@email.co', phone: '312 345 6789', city: 'Planeta Rica', totalOrders: 15 }
-];
+import { mockClients } from '../data/mockData';
 
 export const ClientsPlaceholder: React.FC = () => {
   return (

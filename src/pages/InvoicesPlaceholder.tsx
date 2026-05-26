@@ -1,20 +1,5 @@
 import React from 'react';
-
-interface Invoice {
-  id: string;
-  client: string;
-  date: string;
-  amount: number;
-  status: 'Pagada' | 'Vencida' | 'Pendiente';
-}
-
-const mockInvoices: Invoice[] = [
-  { id: 'FAC-7890', client: 'Carlos Mendoza', date: '24 Oct, 2023', amount: 1250000, status: 'Pagada' },
-  { id: 'FAC-7891', client: 'Laura Restrepo', date: '24 Oct, 2023', amount: 840500, status: 'Pendiente' },
-  { id: 'FAC-7892', client: 'Distribuidora Pacífico', date: '23 Oct, 2023', amount: 3400000, status: 'Pagada' },
-  { id: 'FAC-7893', client: 'Andrés Gómez', date: '22 Oct, 2023', amount: 150000, status: 'Pagada' },
-  { id: 'FAC-7894', client: 'Tienda El Sol', date: '22 Oct, 2023', amount: 920000, status: 'Vencida' }
-];
+import { mockInvoices } from '../data/mockData';
 
 export const InvoicesPlaceholder: React.FC = () => {
   const getStatusBadge = (status: 'Pagada' | 'Vencida' | 'Pendiente') => {
